@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>小阮笔记</title>
+  
+  
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://ruan-xinwei.github.io/"/>
+  <updated>2021-01-24T12:06:10.794Z</updated>
+  <id>http://ruan-xinwei.github.io/</id>
+  
+  <author>
+    <name>Ruan-XinWei</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Flask学习笔记</title>
+    <link href="http://ruan-xinwei.github.io/2021/01/23/Flask%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    <id>http://ruan-xinwei.github.io/2021/01/23/Flask%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</id>
+    <published>2021-01-23T15:37:16.000Z</published>
+    <updated>2021-01-24T12:06:10.794Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Flask是目前最流行的Python Web框架之一。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="前端" scheme="http://ruan-xinwei.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="Flask" scheme="http://ruan-xinwei.github.io/tags/Flask/"/>
+    
+      <category term="Python" scheme="http://ruan-xinwei.github.io/tags/Python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>初入MVC--从前端到后台</title>
+    <link href="http://ruan-xinwei.github.io/2020/12/10/%E5%88%9D%E5%85%A5MVC-%E4%BB%8E%E5%89%8D%E7%AB%AF%E5%88%B0%E5%90%8E%E5%8F%B0/"/>
+    <id>http://ruan-xinwei.github.io/2020/12/10/%E5%88%9D%E5%85%A5MVC-%E4%BB%8E%E5%89%8D%E7%AB%AF%E5%88%B0%E5%90%8E%E5%8F%B0/</id>
+    <published>2020-12-10T02:36:46.000Z</published>
+    <updated>2020-12-10T02:41:47.944Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;愿你熬得过万丈孤独，藏得下星辰大海&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="MVC" scheme="http://ruan-xinwei.github.io/categories/MVC/"/>
+    
+    
+      <category term="HTML" scheme="http://ruan-xinwei.github.io/tags/HTML/"/>
+    
+      <category term="CSS" scheme="http://ruan-xinwei.github.io/tags/CSS/"/>
+    
+      <category term="Javascript" scheme="http://ruan-xinwei.github.io/tags/Javascript/"/>
+    
+      <category term="MVC" scheme="http://ruan-xinwei.github.io/tags/MVC/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>前端学习笔记</title>
+    <link href="http://ruan-xinwei.github.io/2020/06/14/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    <id>http://ruan-xinwei.github.io/2020/06/14/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</id>
+    <published>2020-06-14T08:32:23.000Z</published>
+    <updated>2020-10-07T11:41:57.627Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;人生就是一种平衡&lt;br&gt;简简单单才是真，平平淡淡才是福&lt;br&gt;人之所以痛苦，就在于追求了过多不属于自己的东西&lt;br&gt;懂得知足的人，即使粗茶淡饭，也能够尝出人生的美味&lt;br&gt;与其在遗憾中郁郁寡欢，不如好好珍惜自己的拥有，这样才能收获更多的快乐&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="学习笔记" scheme="http://ruan-xinwei.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="HTML" scheme="http://ruan-xinwei.github.io/tags/HTML/"/>
+    
+      <category term="CSS" scheme="http://ruan-xinwei.github.io/tags/CSS/"/>
+    
+      <category term="前端" scheme="http://ruan-xinwei.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+  </entry>
+  
+</feed>
