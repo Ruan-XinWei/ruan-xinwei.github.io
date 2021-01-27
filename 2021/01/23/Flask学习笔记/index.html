@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="zh"><head><meta charset="utf-8"><meta name="generator" content="Hexo 4.2.1"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>Flask学习笔记 - 小阮笔记</title><meta description="Flask是目前最流行的Python Web框架之一。"><meta property="og:type" content="blog"><meta property="og:title" content="Flask学习笔记"><meta property="og:url" content="http://ruan-xinwei.github.io/2021/01/23/Flask%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"><meta property="og:site_name" content="小阮笔记"><meta property="og:description" content="Flask是目前最流行的Python Web框架之一。"><meta property="og:locale" content="zh_CN"><meta property="og:image" content="http://ruan-xinwei.github.io/image/f32f8eda7fb895bb9f75bc00dcdb80e5.jpg"><meta property="article:published_time" content="2021-01-23T15:37:16.000Z"><meta property="article:modified_time" content="2021-01-24T12:06:10.794Z"><meta property="article:author" content="阮新伟"><meta property="article:tag" content="Flask"><meta property="article:tag" content="Python"><meta property="twitter:card" content="summary"><meta property="twitter:image" content="/./image/f32f8eda7fb895bb9f75bc00dcdb80e5.jpg"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"http://ruan-xinwei.github.io/2021/01/23/Flask%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"},"headline":"小阮笔记","image":["http://ruan-xinwei.github.io/image/f32f8eda7fb895bb9f75bc00dcdb80e5.jpg"],"datePublished":"2021-01-23T15:37:16.000Z","dateModified":"2021-01-24T12:06:10.794Z","author":{"@type":"Person","name":"阮新伟"},"description":"Flask是目前最流行的Python Web框架之一。"}</script><link rel="canonical" href="http://ruan-xinwei.github.io/2021/01/23/Flask%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"><link rel="icon" href="/img/avatar.gif"><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/font-awesome/5.12.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><script>var _hmt = _hmt || [];
+<html lang="zh"><head><meta charset="utf-8"><meta name="generator" content="Hexo 4.2.1"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>Flask学习笔记 - 小阮笔记</title><meta description="Flask是目前最流行的Python Web框架之一"><meta property="og:type" content="blog"><meta property="og:title" content="Flask学习笔记"><meta property="og:url" content="http://ruan-xinwei.github.io/2021/01/23/Flask%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"><meta property="og:site_name" content="小阮笔记"><meta property="og:description" content="Flask是目前最流行的Python Web框架之一"><meta property="og:locale" content="zh_CN"><meta property="og:image" content="http://ruan-xinwei.github.io/image/f32f8eda7fb895bb9f75bc00dcdb80e5.jpg"><meta property="article:published_time" content="2021-01-23T15:37:16.000Z"><meta property="article:modified_time" content="2021-01-27T11:36:02.475Z"><meta property="article:author" content="阮新伟"><meta property="article:tag" content="Flask"><meta property="article:tag" content="Python"><meta property="twitter:card" content="summary"><meta property="twitter:image" content="/./image/f32f8eda7fb895bb9f75bc00dcdb80e5.jpg"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"http://ruan-xinwei.github.io/2021/01/23/Flask%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"},"headline":"小阮笔记","image":["http://ruan-xinwei.github.io/image/f32f8eda7fb895bb9f75bc00dcdb80e5.jpg"],"datePublished":"2021-01-23T15:37:16.000Z","dateModified":"2021-01-27T11:36:02.475Z","author":{"@type":"Person","name":"阮新伟"},"description":"Flask是目前最流行的Python Web框架之一"}</script><link rel="canonical" href="http://ruan-xinwei.github.io/2021/01/23/Flask%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"><link rel="icon" href="/img/avatar.gif"><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/font-awesome/5.12.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><script>var _hmt = _hmt || [];
         (function() {
             var hm = document.createElement("script");
             hm.src = "//hm.baidu.com/hm.js?7119151b5e6e41695e059a5a9e1f55af";
@@ -17,7 +17,7 @@
             r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
             a.appendChild(r);
         })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');</script><!--!--><script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script><link rel="alternate" href="/atom.xml" title="小阮笔记" type="application/atom+xml">
-<link rel="stylesheet" href="/css/prism.css" type="text/css"></head><body class="is-3-column"><nav class="navbar navbar-main"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/avatar.gif" alt="小阮笔记" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">主页</a><a class="navbar-item" href="/archives">归档</a><a class="navbar-item" href="/categories">分类</a><a class="navbar-item" href="/tags">标签</a></div><div class="navbar-end"><a class="navbar-item is-hidden-tablet catalogue" title="目录" href="javascript:;"><i class="fas fa-list-ul"></i></a><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-6-widescreen"><div class="card"><div class="card-image"><span class="image is-7by3"><img class="thumbnail" src="/./image/f32f8eda7fb895bb9f75bc00dcdb80e5.jpg" alt="Flask学习笔记"></span></div><article class="card-content article" role="article"><div class="article-meta size-small is-uppercase level is-mobile"><div class="level-left"><time class="level-item" dateTime="2021-01-23T15:37:16.000Z" title="2021-01-23T15:37:16.000Z">2021-01-23</time><span class="level-item"> 阮新伟 </span><span class="level-item"><a class="link-muted" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a></span><span class="level-item">3 分钟 读完 (大约 392 个字)</span><span class="level-item" id="busuanzi_container_page_pv"><i class="far fa-eye"></i>&nbsp;&nbsp;<span id="busuanzi_value_page_pv">0</span>次访问</span></div></div><h1 class="title is-3 is-size-4-mobile">Flask学习笔记</h1><div class="content"><p>Flask是目前最流行的Python Web框架之一。</p>
+<link rel="stylesheet" href="/css/prism.css" type="text/css"></head><body class="is-3-column"><nav class="navbar navbar-main"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/avatar.gif" alt="小阮笔记" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">主页</a><a class="navbar-item" href="/archives">归档</a><a class="navbar-item" href="/categories">分类</a><a class="navbar-item" href="/tags">标签</a></div><div class="navbar-end"><a class="navbar-item is-hidden-tablet catalogue" title="目录" href="javascript:;"><i class="fas fa-list-ul"></i></a><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-6-widescreen"><div class="card"><div class="card-image"><span class="image is-7by3"><img class="thumbnail" src="/./image/f32f8eda7fb895bb9f75bc00dcdb80e5.jpg" alt="Flask学习笔记"></span></div><article class="card-content article" role="article"><div class="article-meta size-small is-uppercase level is-mobile"><div class="level-left"><time class="level-item" dateTime="2021-01-23T15:37:16.000Z" title="2021-01-23T15:37:16.000Z">2021-01-23</time><span class="level-item"> 阮新伟 </span><span class="level-item"><a class="link-muted" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a></span><span class="level-item">15 分钟 读完 (大约 2229 个字)</span><span class="level-item" id="busuanzi_container_page_pv"><i class="far fa-eye"></i>&nbsp;&nbsp;<span id="busuanzi_value_page_pv">0</span>次访问</span></div></div><h1 class="title is-3 is-size-4-mobile">Flask学习笔记</h1><div class="content"><p>Flask是目前最流行的Python Web框架之一</p>
 <a id="more"></a>
 
 <h1 id="初识Flask"><a href="#初识Flask" class="headerlink" title="初识Flask"></a>初识Flask</h1><h2 id="搭建开发环境"><a href="#搭建开发环境" class="headerlink" title="搭建开发环境"></a>搭建开发环境</h2><ol>
@@ -60,6 +60,357 @@
 </ol>
 </li>
 </ol>
+<h1 id="模板"><a href="#模板" class="headerlink" title="模板"></a>模板</h1><h2 id="模板基本用法"><a href="#模板基本用法" class="headerlink" title="模板基本用法"></a>模板基本用法</h2><ol>
+<li>三种定界符<ol>
+<li>语句    <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% ... %&#125;</span><br></pre></td></tr></table></figure></li>
+<li>表达式    <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#123; ... &#125;&#125;</span><br></pre></td></tr></table></figure></li>
+<li>注释    <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;# ... #&#125;</span><br></pre></td></tr></table></figure></li>
+</ol>
+</li>
+<li>语句结束标签<ol>
+<li>if-else    <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;% if ... %&#125;</span><br><span class="line">    &#x2F;&#x2F;if 语句</span><br><span class="line">&#123;% else ... %&#125;</span><br><span class="line">    &#x2F;&#x2F;else 语句</span><br><span class="line">&#123;% endif %&#125;</span><br></pre></td></tr></table></figure></li>
+<li>for    <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;% for i in ... %&#125;</span><br><span class="line">    &#x2F;&#x2F;for语句</span><br><span class="line">&#123;% endfor %&#125;</span><br></pre></td></tr></table></figure></li>
+</ol>
+</li>
+<li>模板语法  <table>
+<thead>
+<tr>
+<th align="center">变量名</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">loop.index</td>
+<td align="center">当前迭代数（从1开始计数）</td>
+</tr>
+<tr>
+<td align="center">loop.index0</td>
+<td align="center">当前迭代数（从0开始计数）</td>
+</tr>
+<tr>
+<td align="center">loop.revindex</td>
+<td align="center">当前反向迭代数（从1开始计数）</td>
+</tr>
+<tr>
+<td align="center">loop.revindex0</td>
+<td align="center">当前反向迭代数（从0开始计数）</td>
+</tr>
+<tr>
+<td align="center">loop.first</td>
+<td align="center">如果是第一个元素，则为True</td>
+</tr>
+<tr>
+<td align="center">loop.last</td>
+<td align="center">如果是最后一个元素，则为True</td>
+</tr>
+<tr>
+<td align="center">loop.previtem</td>
+<td align="center">上一个迭代的条目</td>
+</tr>
+<tr>
+<td align="center">loop.nextitem</td>
+<td align="center">下一个迭代的条目</td>
+</tr>
+<tr>
+<td align="center">loop.length</td>
+<td align="center">序列包含的元素数量</td>
+</tr>
+</tbody></table>
+</li>
+</ol>
+<h2 id="渲染模板"><a href="#渲染模板" class="headerlink" title="渲染模板"></a>渲染模板</h2><ol>
+<li>使用Flask提供的渲染函数<code>render_template()</code>   <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> Flask, render_template</span><br><span class="line"><span class="meta">@app.route('/watchlist')</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">watchlist</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">return</span> render_template(<span class="string">'watchlist.html'</span>, user=user, movies=movies)</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h2 id="模板辅助工具"><a href="#模板辅助工具" class="headerlink" title="模板辅助工具"></a>模板辅助工具</h2><ol>
+<li><p>上下文</p>
+<ol>
+<li><p>自定义上下文变量  </p>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#123;% set navigation = [&#123;<span class="string">'/'</span>, <span class="string">'Home'</span>&#125;, &#123;<span class="string">'/about'</span>, <span class="string">'About'</span>&#125;] %&#125;</span><br><span class="line"></span><br><span class="line">&#123;% set navigation %&#125;</span><br><span class="line">    &lt;li&gt;&lt;a href="/"&gt;Home&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">    &lt;li&gt;&lt;a href="/about"&gt;About&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">&#123;% endset %&#125;</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li><p>内置上下文变量  </p>
+<table>
+<thead>
+<tr>
+<th align="center">变量</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">config</td>
+<td align="center">当前的配置对象</td>
+</tr>
+<tr>
+<td align="center">request</td>
+<td align="center">当前的请求对象，在已激活的请求环境下可用</td>
+</tr>
+<tr>
+<td align="center">session</td>
+<td align="center">当前的会话对象，在已激活的请求环境下可用</td>
+</tr>
+<tr>
+<td align="center">g</td>
+<td align="center">与请求绑定的全局变量，在已激活的请求环境下可用</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>自定义上下文  </p>
+<blockquote>
+<p>设置模板全局变量  </p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 1. 注册模板上下文处理函数</span></span><br><span class="line"><span class="meta">@app.context_processor</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">inject_foo</span><span class="params">()</span>:</span></span><br><span class="line">    foo = <span class="string">'I am foo.'</span></span><br><span class="line">    <span class="keyword">return</span> dict(foo=foo)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 2. 添加现有函数</span></span><br><span class="line">app.context_processor(inject_foo)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 3.使用lambda简化</span></span><br><span class="line">app.context_processor(<span class="keyword">lambda</span>: dict(foo=<span class="string">'I am foo.'</span>))</span><br></pre></td></tr></table></figure></li>
+</ol>
+</li>
+</ol>
+</li>
+<li><p>全局对象</p>
+<ol>
+<li>内置全局函数  <table>
+<thead>
+<tr>
+<th align="center">函数</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">range([start, ]stop[, step])</td>
+<td align="center">和Python中的range()用法相同</td>
+</tr>
+<tr>
+<td align="center">lipsum(n = 5, html = True, min = 20, max = 100</td>
+<td align="center">生成随机文本</td>
+</tr>
+<tr>
+<td align="center">dict(**item)</td>
+<td align="center">和Python中的dict()用法相同</td>
+</tr>
+<tr>
+<td align="center">url_for()</td>
+<td align="center">用于生成URL的函数</td>
+</tr>
+<tr>
+<td align="center">get_flashed_message()</td>
+<td align="center">用于获取flash消息的函数</td>
+</tr>
+</tbody></table>
+</li>
+<li>自定义全局函数    <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 1. 注册全局函数</span></span><br><span class="line"><span class="meta">@app.template_global()</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">bar</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">'I am bar.'</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 2. 添加全局函数</span></span><br><span class="line"><span class="meta">@app.add_template_global(bar)</span></span><br></pre></td></tr></table></figure></li>
+</ol>
+</li>
+<li><p>过滤器</p>
+<ol>
+<li>用法    <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 1. 对变量进行过滤</span></span><br><span class="line">&#123;&#123; name|title &#125;&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 2. 对模板进行过滤</span></span><br><span class="line">&#123;% filter upper %&#125;</span><br><span class="line">    This text becomes uppercase.</span><br><span class="line">&#123;% endfilter %&#125;</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>内置过滤器  <table>
+<thead>
+<tr>
+<th align="center">过滤器</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">default(value, default_value=u”, boolean=False)</td>
+<td align="center">设置默认值，默认值作为参数传入，别名为d</td>
+</tr>
+<tr>
+<td align="center">escape(s)</td>
+<td align="center">转义HTML文本，别名为e</td>
+</tr>
+<tr>
+<td align="center">first(seq)</td>
+<td align="center">返回序列的第一个元素</td>
+</tr>
+<tr>
+<td align="center">last(seq)</td>
+<td align="center">返回序列的最后一个元素</td>
+</tr>
+<tr>
+<td align="center">length(object)</td>
+<td align="center">返回变量的长度</td>
+</tr>
+<tr>
+<td align="center">random(seq)</td>
+<td align="center">返回序列中的随机元素</td>
+</tr>
+<tr>
+<td align="center">safe(value)</td>
+<td align="center">将变量值标记为安全，避免转义</td>
+</tr>
+<tr>
+<td align="center">trim(value)</td>
+<td align="center">清除变量值前后的空格</td>
+</tr>
+<tr>
+<td align="center">max(value, case_sensitive = False, attribute = None</td>
+<td align="center">返回序列中的最大值</td>
+</tr>
+<tr>
+<td align="center">min(value, case_sensitive = False, attribute = None</td>
+<td align="center">返回序列中的最小值</td>
+</tr>
+<tr>
+<td align="center">unique(value, case_sensitive = False, attribute = None</td>
+<td align="center">返回序列中的不重复的值</td>
+</tr>
+<tr>
+<td align="center">striptags(value)</td>
+<td align="center">清除变量值内的HTML标签</td>
+</tr>
+<tr>
+<td align="center">urlize(value, trim_url_limit = None, nofollow = False, target = None, rel = None</td>
+<td align="center">将URL文本转换成可单击的HTML链接</td>
+</tr>
+<tr>
+<td align="center">wordcount(s)</td>
+<td align="center">计算单词数量</td>
+</tr>
+<tr>
+<td align="center">tojson(value, indent = None)</td>
+<td align="center">将变量值转换为JSON格式</td>
+</tr>
+<tr>
+<td align="center">truncate(s, length = 255, killwords = False, end=’…’, leeway=None</td>
+<td align="center">截断字符串，常用于显示文章摘要，length参数设置截断的长度，killwords参数设置是否截断单词，end参数设置结尾的符号</td>
+</tr>
+</tbody></table>
+</li>
+<li>自定义过滤器  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 1. 注册自定义过滤器</span></span><br><span class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> Markup</span><br><span class="line"><span class="meta">@app.template_filter()</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">musical</span><span class="params">(s)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> s + Markup(<span class="string">' &amp;#9835;'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 2. 添加方式注册</span></span><br><span class="line">app.add_template_filter(musical)</span><br></pre></td></tr></table></figure></li>
+<li>在使用过滤器时，竖线符号左边的值，是过滤器函数的第一个值，其他参数可以通过添加括号传入</li>
+</ol>
+</li>
+</ol>
+</li>
+<li><p>测试器</p>
+<ol>
+<li>用法    <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;% <span class="keyword">if</span> age <span class="keyword">is</span> number %&#125;</span><br><span class="line">    &#123;&#123; age * <span class="number">365</span> &#125;&#125;</span><br><span class="line">&#123;% <span class="keyword">else</span> %&#125;</span><br><span class="line">    无效数字</span><br><span class="line">&#123;% endif %&#125;</span><br></pre></td></tr></table></figure></li>
+<li>内置测试器  <table>
+<thead>
+<tr>
+<th align="center">测试器</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">callable(object)</td>
+<td align="center">判断对象是否可被调用</td>
+</tr>
+<tr>
+<td align="center">defined(value)</td>
+<td align="center">判断变量是否已定义</td>
+</tr>
+<tr>
+<td align="center">undefined(value)</td>
+<td align="center">判断变量是否未定义</td>
+</tr>
+<tr>
+<td align="center">none(value)</td>
+<td align="center">判断变量是否为None</td>
+</tr>
+<tr>
+<td align="center">number(value)</td>
+<td align="center">判断变量是否是数字</td>
+</tr>
+<tr>
+<td align="center">string(value)</td>
+<td align="center">判断变量是否是字符串</td>
+</tr>
+<tr>
+<td align="center">sequence(value)</td>
+<td align="center">判断变量是否是序列，比如字符串、列表、元组</td>
+</tr>
+<tr>
+<td align="center">iterable(value)</td>
+<td align="center">判断变量是否可迭代</td>
+</tr>
+<tr>
+<td align="center">mapping(value)</td>
+<td align="center">判断变量是否是匹配对象，比如字典</td>
+</tr>
+<tr>
+<td align="center">sameas(value, other)</td>
+<td align="center">判断变量与other是否指向相同的内存地址</td>
+</tr>
+</tbody></table>
+</li>
+<li>自定义测试器    <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 1. 注册自定义测试器</span></span><br><span class="line"><span class="meta">@app.template_test()</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">baz</span><span class="params">(n)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> n == <span class="string">'baz'</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">    <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 2. 添加注册自定义测试器</span></span><br><span class="line">app.add_template_test(baz)</span><br></pre></td></tr></table></figure></li>
+<li>在使用测试器时，is的左侧是测试器函数的第一个参数(value)，其他参数可以添加括号传入，也可以在右侧使用空格连接，以sameas为例：    <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;% <span class="keyword">if</span> foo <span class="keyword">is</span> sameas(bar) %&#125;</span><br><span class="line"><span class="comment"># 等同于</span></span><br><span class="line">&#123;% <span class="keyword">if</span> foo <span class="keyword">is</span> sameas bar %&#125;</span><br></pre></td></tr></table></figure></li>
+</ol>
+</li>
+<li><p>模板环境对象</p>
+<ol>
+<li>添加自定义全局对象    <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">app.jinja_env.globals[<span class="string">'bar'</span>] = bar</span><br></pre></td></tr></table></figure></li>
+<li>添加自定义过滤器    <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">app.jinja_env.filters[<span class="string">'smiling'</span>] = smiling</span><br></pre></td></tr></table></figure></li>
+<li>添加自定义测试器    <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">app.jinja_env.tests[<span class="string">'baz'</span>] = baz</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+</li>
+</ol>
+<h2 id="模板结构组织"><a href="#模板结构组织" class="headerlink" title="模板结构组织"></a>模板结构组织</h2><ol>
+<li>局部模板<ol>
+<li>提示：为了和普通模板区分开，局部模板的命名通常以一个下划线开始</li>
+<li>用法    <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 在任意位置，使用以下代码插入局部模板</span></span><br><span class="line">&#123;% include <span class="string">'_xxx.html'</span> %&#125;</span><br></pre></td></tr></table></figure></li>
+</ol>
+</li>
+<li>宏<ol>
+<li>简单示例    <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#123;% macro qux(amount=<span class="number">1</span>) %&#125;</span><br><span class="line">    &#123;% <span class="keyword">if</span> amount == <span class="number">1</span> -%&#125;</span><br><span class="line">        I am qux.</span><br><span class="line">    &#123;%- <span class="keyword">elif</span> amount &gt; <span class="number">1</span> -%&#125;</span><br><span class="line">        We are quxs.</span><br><span class="line">    &#123;%- endif %&#125;</span><br><span class="line">&#123;% endmacro %&#125;</span><br></pre></td></tr></table></figure></li>
+<li>用法    <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;% <span class="keyword">from</span> <span class="string">'macros.html'</span> <span class="keyword">import</span> qux %&#125;</span><br><span class="line"><span class="comment"># ...</span></span><br><span class="line">&#123;&#123; qux(amount = <span class="number">5</span>) &#125;&#125;</span><br></pre></td></tr></table></figure></li>
+<li>默认情况下，包含（include）一个局部模板会传递当前上下文到局部模板中，但是导入（import）不会。如果想要导入（import）也传递当前上下文，则需要显式地使用<code>with context</code>。    <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% <span class="keyword">from</span> <span class="string">'macros.html'</span> <span class="keyword">import</span> qux <span class="keyword">with</span> context  %&#125;</span><br></pre></td></tr></table></figure></li>
+</ol>
+</li>
+<li>模板继承<ol>
+<li>编写基模板，通常命名为base.html或layout.html    <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#123;% block head %&#125;</span><br><span class="line">&#123;% endblock %&#125;</span><br></pre></td></tr></table></figure></li>
+<li>编写子模板<ol>
+<li>覆盖内容     <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;% extend <span class="string">'base.html'</span> %&#125;</span><br><span class="line">&#123;% block head %&#125;</span><br><span class="line">&#123;<span class="comment"># ... #&#125;</span></span><br><span class="line">&#123;% endblock %&#125;</span><br></pre></td></tr></table></figure></li>
+<li>追加内容     <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;% extend <span class="string">'base.html'</span> %&#125;</span><br><span class="line">&#123;&#123; super() &#125;&#125;</span><br><span class="line">&#123;<span class="comment"># ... #&#125;</span></span><br><span class="line">&#123;% endblock %&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<h2 id="模板进阶实践"><a href="#模板进阶实践" class="headerlink" title="模板进阶实践"></a>模板进阶实践</h2><ol>
+<li>空白控制<ol>
+<li>渲染时自动去除右边空格    <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;%  -%&#125;</span><br></pre></td></tr></table></figure></li>
+<li>渲染时自动去除左边空格    <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;%-  %&#125;</span><br></pre></td></tr></table></figure></li>
+<li>利用环境对象    <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 删除Jinja2语句后的第一个空行</span></span><br><span class="line">app.jinja_env.trim_blocks = <span class="literal">True</span></span><br><span class="line"><span class="comment"># 删除Jinja2语句所在行之前的空格和制表符</span></span><br><span class="line">app.jinja_env.lstrip_block = <span class="literal">True</span></span><br></pre></td></tr></table></figure></li>
+<li>需要注意：宏内的空白控制行为不受<code>trim_blocks</code>和<code>lstrip_blocks</code>属性控制，需要手动控制</li>
+</ol>
+</li>
+<li>加载静态文件<ol>
+<li>默认将静态文件存储在与主脚本同级目录的static文件夹中</li>
+<li>通过<code>url_for(&#39;static&#39;, filename=&#39;avatar.jpg&#39;)</code>获取到<code>/static/avatar.jpg</code></li>
+<li>添加Favicon<ol>
+<li>添加文件<code>favicon.ico</code>到<code>static</code>目录下</li>
+<li>在<code>&lt;head&gt;</code>部分添加一个<code>&lt;link&gt;</code>元素     <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"icon"</span> <span class="attr">type</span>=<span class="string">"image/x-icon"</span> <span class="attr">href</span>=<span class="string">"&#123;&#123; url_for('static', filename='favicon.ico') &#125;&#125;"</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+</ol>
+</li>
+<li>使用宏加载静态资源    <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&#123;% macro static_file(type, filename_or_url, local=True) %&#125;</span><br><span class="line">    &#123;% if local -%&#125;</span><br><span class="line">        &#123;% set filename_or_url = url_for('static', filename=filename_or_url) %&#125;</span><br><span class="line">    &#123;%- endif %&#125;</span><br><span class="line">    &#123;% if type == 'css' -%&#125;</span><br><span class="line">        <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">href</span>=<span class="string">"&#123;&#123; filename_or_url &#125;&#125;"</span> <span class="attr">type</span>=<span class="string">"text/css"</span>&gt;</span></span><br><span class="line">    &#123;%- elif type == 'js' -%&#125;</span><br><span class="line">        <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span> <span class="attr">src</span>=<span class="string">"&#123;&#123; filename_or_url &#125;&#125;"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">    &#123;%- elif type == 'icon' -%&#125;</span><br><span class="line">        <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"icon"</span> <span class="attr">href</span>=<span class="string">"&#123;&#123; filename_or_url &#125;&#125;"</span>&gt;</span></span><br><span class="line">    &#123;%- endif %&#125;</span><br><span class="line">&#123;% endmacro %&#125;</span><br></pre></td></tr></table></figure>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 1. 加载静态资源</span></span><br><span class="line">static_file(<span class="string">'css'</span>, <span class="string">'/css/bootstrap.min.css'</span>)</span><br><span class="line"><span class="comment"># 2. 从CDN加载资源</span></span><br><span class="line">static_file(<span class="string">'css'</span>, <span class="string">'https://.../css/bootstrap.min.css'</span>, local=<span class="literal">False</span>)</span><br></pre></td></tr></table></figure></li>
+</ol>
+</li>
+<li>消息闪现<ol>
+<li>使用<code>flash()</code>函数闪现    <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flash(<span class="string">'flash message.'</span>)</span><br></pre></td></tr></table></figure></li>
+<li>使用<code>get_flashed_messages()</code>在模板中获取消息    <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;% for message in get_flashed_messages() %&#125;</span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"alert"</span>&gt;</span>&#123;&#123; message &#125;&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">&#123;% endfor %&#125;</span><br></pre></td></tr></table></figure></li>
+</ol>
+</li>
+<li>自定义错误页面   <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> Flask, render_template</span><br><span class="line"><span class="meta">@app.errorhandler(404)</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">page_not_found</span><span class="params">(e)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> render_template(<span class="string">'errors/404.html'</span>), <span class="number">404</span></span><br></pre></td></tr></table></figure></li>
+<li>JavaScript和CSS中的Jinja2<ol>
+<li>定义为JavaScript变量<ol>
+<li>定义     <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">data-id</span>=<span class="string">"&#123;&#123; user.id &#125;&#125;"</span> <span class="attr">data-username</span>=<span class="string">"&#123;&#123; user.username &#125;&#125;"</span>&gt;</span>&#123;&#123; user.username &#125;&#125;<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+<li>使用     <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">element.dataset.username</span><br><span class="line">element.getAttribute(<span class="string">'data-username'</span>)</span><br><span class="line">$element.data(<span class="string">'username'</span>)</span><br></pre></td></tr></table></figure></li>
+</ol>
+</li>
+<li>定义为CSS变量<ol>
+<li>定义   <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="css"><span class="selector-pseudo">:root</span> &#123;</span></span><br><span class="line">    --theme-color: &#123;&#123; theme_color &#125;&#125;;</span><br><span class="line">    --background-url: &#123;&#123; url_for('static', filename='background.jpg') &#125;&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+<li>使用   <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-id">#foo</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: <span class="built_in">var</span>(--theme-color);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-id">#bar</span> &#123;</span><br><span class="line">    <span class="attribute">background</span>: <span class="built_in">var</span>(--background-url);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
 </div><div class="article-tags size-small mb-4"><span class="mr-2">#</span><a class="link-muted mr-2" rel="tag" href="/tags/Flask/">Flask</a><a class="link-muted mr-2" rel="tag" href="/tags/Python/">Python</a></div><div class="addthis_inline_share_toolbox"></div><script src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5f097725cc965762" defer></script></article></div><div class="card"><div class="card-content"><h3 class="menu-label has-text-centered">喜欢这篇文章？打赏一下作者吧</h3><div class="buttons is-centered"><a class="button is-info donate"><span class="icon is-small"><i class="fab fa-alipay"></i></span><span>支付宝</span><span class="qrcode"><img src="/img/alipay.jpg" alt="支付宝"></span></a><a class="button is-success donate"><span class="icon is-small"><i class="fab fa-weixin"></i></span><span>微信</span><span class="qrcode"><img src="/img/wechat.jpg" alt="微信"></span></a></div></div></div><nav class="post-navigation mt-4 level is-mobile"><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/2020/12/10/%E5%88%9D%E5%85%A5MVC-%E4%BB%8E%E5%89%8D%E7%AB%AF%E5%88%B0%E5%90%8E%E5%8F%B0/"><span class="level-item">初入MVC--从前端到后台</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><div class="card"><div class="card-content"><h3 class="title is-5">评论</h3><div id="comment-container"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.6.2/dist/gitalk.css"><script src="https://cdn.jsdelivr.net/npm/gitalk@1.6.2/dist/gitalk.min.js"></script><script>var gitalk = new Gitalk({
             id: '07a3d42f84a000654cda637a5dfe334d',
             repo: 'ruan-xinwei.github.io',
@@ -75,7 +426,7 @@
             
             enableHotKey: true
         })
-        gitalk.render('comment-container')</script></div></div></div><div class="column column-left is-4-tablet is-4-desktop is-3-widescreen  order-1"><div class="card widget"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar" src="/img/avatar.gif" alt="阮新伟"></figure><p class="title is-size-4 is-block line-height-inherit">阮新伟</p><p class="is-size-6 is-block">学生</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>中国，江西</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">文章</p><a href="/archives"><p class="title">3</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">分类</p><a href="/categories"><p class="title">3</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">标签</p><a href="/tags"><p class="title">7</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="/" target="_blank" rel="noopener">关注我</a></div><div class="level is-mobile"><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Github" href="https://github.com/Ruan-XinWei"><i class="fab fa-github"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="QQ" href="http://wpa.qq.com/msgrd?v=3&amp;uin=1169348105&amp;site=qq&amp;menu=yes"><i class="fab fa-qq"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Mail" href="mailto:1169348105@qq.com"><i class="fa fa-envelope"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="RSS" href="/"><i class="fas fa-rss"></i></a></div></div></div><div class="card widget"><div class="card-content"><div class="menu"><h3 class="menu-label">链接</h3><ul class="menu-list"><li><a class="level is-mobile is-mobile" href="http://ruanxinwei.cn/" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">My Blog</span></span><span class="level-right"><span class="level-item tag">ruanxinwei.cn</span></span></a></li></ul></div></div></div><div class="card widget"><div class="card-content"><div class="menu"><h3 class="menu-label">分类</h3><ul class="menu-list"><li><a class="level is-mobile is-marginless" href="/categories/MVC/"><span class="level-start"><span class="level-item">MVC</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile is-marginless" href="/categories/%E5%89%8D%E7%AB%AF/"><span class="level-start"><span class="level-item">前端</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile is-marginless" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"><span class="level-start"><span class="level-item">学习笔记</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li></ul></div></div></div><div class="card widget"><div class="card-content"><h3 class="menu-label">最新文章</h3><article class="media"><a class="media-left" href="/2021/01/23/Flask%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"><p class="image is-64x64"><img class="thumbnail" src="/./image/f32f8eda7fb895bb9f75bc00dcdb80e5.jpg" alt="Flask学习笔记"></p></a><div class="media-content size-small"><p><time dateTime="2021-01-23T15:37:16.000Z">2021-01-23</time></p><p class="title is-6"><a class="link-muted" href="/2021/01/23/Flask%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">Flask学习笔记</a></p><p class="is-uppercase"><a class="link-muted" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a></p></div></article><article class="media"><a class="media-left" href="/2020/12/10/%E5%88%9D%E5%85%A5MVC-%E4%BB%8E%E5%89%8D%E7%AB%AF%E5%88%B0%E5%90%8E%E5%8F%B0/"><p class="image is-64x64"><img class="thumbnail" src="/./image/3f07258d4f0c3679730a47831c823a90.jpg" alt="初入MVC--从前端到后台"></p></a><div class="media-content size-small"><p><time dateTime="2020-12-10T02:36:46.000Z">2020-12-10</time></p><p class="title is-6"><a class="link-muted" href="/2020/12/10/%E5%88%9D%E5%85%A5MVC-%E4%BB%8E%E5%89%8D%E7%AB%AF%E5%88%B0%E5%90%8E%E5%8F%B0/">初入MVC--从前端到后台</a></p><p class="is-uppercase"><a class="link-muted" href="/categories/MVC/">MVC</a></p></div></article><article class="media"><a class="media-left" href="/2020/06/14/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"><p class="image is-64x64"><img class="thumbnail" src="/./image/635a74d22a202db9c7b3f51d1eba1b8e.jpg" alt="前端学习笔记"></p></a><div class="media-content size-small"><p><time dateTime="2020-06-14T08:32:23.000Z">2020-06-14</time></p><p class="title is-6"><a class="link-muted" href="/2020/06/14/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">前端学习笔记</a></p><p class="is-uppercase"><a class="link-muted" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a></p></div></article></div></div><div class="card widget"><div class="card-content"><div class="menu"><h3 class="menu-label">归档</h3><ul class="menu-list"><li><a class="level is-mobile is-marginless" href="/archives/2021/01/"><span class="level-start"><span class="level-item">一月 2021</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2020/12/"><span class="level-start"><span class="level-item">十二月 2020</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2020/06/"><span class="level-start"><span class="level-item">六月 2020</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li></ul></div></div></div><div class="card widget"><div class="card-content"><div class="menu"><h3 class="menu-label">标签</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/tags/CSS/"><span class="tag">CSS</span><span class="tag is-grey-lightest">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Flask/"><span class="tag">Flask</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/HTML/"><span class="tag">HTML</span><span class="tag is-grey-lightest">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Javascript/"><span class="tag">Javascript</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/MVC/"><span class="tag">MVC</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Python/"><span class="tag">Python</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%89%8D%E7%AB%AF/"><span class="tag">前端</span><span class="tag is-grey-lightest">1</span></a></div></div></div></div></div><div class="column-right-shadow is-hidden-widescreen"></div></div><div class="column column-right is-4-tablet is-4-desktop is-3-widescreen is-hidden-touch is-hidden-desktop-only order-3"><div class="card widget" id="toc"><div class="card-content"><div class="menu"><h3 class="menu-label">目录</h3><ul class="menu-list"><li><a class="is-flex" href="#初识Flask"><span class="mr-2">1</span><span>初识Flask</span></a><ul class="menu-list"><li><a class="is-flex" href="#搭建开发环境"><span class="mr-2">1.1</span><span>搭建开发环境</span></a></li><li><a class="is-flex" href="#Hello，Flask！"><span class="mr-2">1.2</span><span>Hello，Flask！</span></a></li></ul></li></ul></div></div></div></div></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="/img/avatar.gif" alt="小阮笔记" height="28"></a><p class="size-small"><span>&copy; 2021 阮新伟</span><br><span id="busuanzi_container_site_uv">共<span id="busuanzi_value_site_uv">0</span>个访客</span></p></div><div class="level-end"></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script>moment.locale("zh-CN");</script><script>var IcarusThemeSettings = {
+        gitalk.render('comment-container')</script></div></div></div><div class="column column-left is-4-tablet is-4-desktop is-3-widescreen  order-1"><div class="card widget"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar" src="/img/avatar.gif" alt="阮新伟"></figure><p class="title is-size-4 is-block line-height-inherit">阮新伟</p><p class="is-size-6 is-block">学生</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>中国，江西</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">文章</p><a href="/archives"><p class="title">3</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">分类</p><a href="/categories"><p class="title">3</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">标签</p><a href="/tags"><p class="title">7</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="/" target="_blank" rel="noopener">关注我</a></div><div class="level is-mobile"><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Github" href="https://github.com/Ruan-XinWei"><i class="fab fa-github"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="QQ" href="http://wpa.qq.com/msgrd?v=3&amp;uin=1169348105&amp;site=qq&amp;menu=yes"><i class="fab fa-qq"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Mail" href="mailto:1169348105@qq.com"><i class="fa fa-envelope"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="RSS" href="/"><i class="fas fa-rss"></i></a></div></div></div><div class="card widget"><div class="card-content"><div class="menu"><h3 class="menu-label">链接</h3><ul class="menu-list"><li><a class="level is-mobile is-mobile" href="http://ruanxinwei.cn/" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">My Blog</span></span><span class="level-right"><span class="level-item tag">ruanxinwei.cn</span></span></a></li></ul></div></div></div><div class="card widget"><div class="card-content"><div class="menu"><h3 class="menu-label">分类</h3><ul class="menu-list"><li><a class="level is-mobile is-marginless" href="/categories/MVC/"><span class="level-start"><span class="level-item">MVC</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile is-marginless" href="/categories/%E5%89%8D%E7%AB%AF/"><span class="level-start"><span class="level-item">前端</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile is-marginless" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"><span class="level-start"><span class="level-item">学习笔记</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li></ul></div></div></div><div class="card widget"><div class="card-content"><h3 class="menu-label">最新文章</h3><article class="media"><a class="media-left" href="/2021/01/23/Flask%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"><p class="image is-64x64"><img class="thumbnail" src="/./image/f32f8eda7fb895bb9f75bc00dcdb80e5.jpg" alt="Flask学习笔记"></p></a><div class="media-content size-small"><p><time dateTime="2021-01-23T15:37:16.000Z">2021-01-23</time></p><p class="title is-6"><a class="link-muted" href="/2021/01/23/Flask%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">Flask学习笔记</a></p><p class="is-uppercase"><a class="link-muted" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a></p></div></article><article class="media"><a class="media-left" href="/2020/12/10/%E5%88%9D%E5%85%A5MVC-%E4%BB%8E%E5%89%8D%E7%AB%AF%E5%88%B0%E5%90%8E%E5%8F%B0/"><p class="image is-64x64"><img class="thumbnail" src="/./image/3f07258d4f0c3679730a47831c823a90.jpg" alt="初入MVC--从前端到后台"></p></a><div class="media-content size-small"><p><time dateTime="2020-12-10T02:36:46.000Z">2020-12-10</time></p><p class="title is-6"><a class="link-muted" href="/2020/12/10/%E5%88%9D%E5%85%A5MVC-%E4%BB%8E%E5%89%8D%E7%AB%AF%E5%88%B0%E5%90%8E%E5%8F%B0/">初入MVC--从前端到后台</a></p><p class="is-uppercase"><a class="link-muted" href="/categories/MVC/">MVC</a></p></div></article><article class="media"><a class="media-left" href="/2020/06/14/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"><p class="image is-64x64"><img class="thumbnail" src="/./image/635a74d22a202db9c7b3f51d1eba1b8e.jpg" alt="前端学习笔记"></p></a><div class="media-content size-small"><p><time dateTime="2020-06-14T08:32:23.000Z">2020-06-14</time></p><p class="title is-6"><a class="link-muted" href="/2020/06/14/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">前端学习笔记</a></p><p class="is-uppercase"><a class="link-muted" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a></p></div></article></div></div><div class="card widget"><div class="card-content"><div class="menu"><h3 class="menu-label">归档</h3><ul class="menu-list"><li><a class="level is-mobile is-marginless" href="/archives/2021/01/"><span class="level-start"><span class="level-item">一月 2021</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2020/12/"><span class="level-start"><span class="level-item">十二月 2020</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2020/06/"><span class="level-start"><span class="level-item">六月 2020</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li></ul></div></div></div><div class="card widget"><div class="card-content"><div class="menu"><h3 class="menu-label">标签</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/tags/CSS/"><span class="tag">CSS</span><span class="tag is-grey-lightest">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Flask/"><span class="tag">Flask</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/HTML/"><span class="tag">HTML</span><span class="tag is-grey-lightest">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Javascript/"><span class="tag">Javascript</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/MVC/"><span class="tag">MVC</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Python/"><span class="tag">Python</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%89%8D%E7%AB%AF/"><span class="tag">前端</span><span class="tag is-grey-lightest">1</span></a></div></div></div></div></div><div class="column-right-shadow is-hidden-widescreen"></div></div><div class="column column-right is-4-tablet is-4-desktop is-3-widescreen is-hidden-touch is-hidden-desktop-only order-3"><div class="card widget" id="toc"><div class="card-content"><div class="menu"><h3 class="menu-label">目录</h3><ul class="menu-list"><li><a class="is-flex" href="#初识Flask"><span class="mr-2">1</span><span>初识Flask</span></a><ul class="menu-list"><li><a class="is-flex" href="#搭建开发环境"><span class="mr-2">1.1</span><span>搭建开发环境</span></a></li><li><a class="is-flex" href="#Hello，Flask！"><span class="mr-2">1.2</span><span>Hello，Flask！</span></a></li></ul></li><li><a class="is-flex" href="#模板"><span class="mr-2">2</span><span>模板</span></a><ul class="menu-list"><li><a class="is-flex" href="#模板基本用法"><span class="mr-2">2.1</span><span>模板基本用法</span></a></li><li><a class="is-flex" href="#渲染模板"><span class="mr-2">2.2</span><span>渲染模板</span></a></li><li><a class="is-flex" href="#模板辅助工具"><span class="mr-2">2.3</span><span>模板辅助工具</span></a></li><li><a class="is-flex" href="#模板结构组织"><span class="mr-2">2.4</span><span>模板结构组织</span></a></li><li><a class="is-flex" href="#模板进阶实践"><span class="mr-2">2.5</span><span>模板进阶实践</span></a></li></ul></li></ul></div></div></div></div></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="/img/avatar.gif" alt="小阮笔记" height="28"></a><p class="size-small"><span>&copy; 2021 阮新伟</span><br><span id="busuanzi_container_site_uv">共<span id="busuanzi_value_site_uv">0</span>个访客</span></p></div><div class="level-end"></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script>moment.locale("zh-CN");</script><script>var IcarusThemeSettings = {
             site: {
                 url: 'http://ruan-xinwei.github.io',
                 external_link: {"enable":true,"exclude":[]}
